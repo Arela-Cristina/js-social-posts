@@ -55,3 +55,25 @@ const posts = [
         "created": "2021-03-05"
     }
 ];
+
+//chiamiamo il container principale id container
+let container = document.getElementById('container');
+
+//chiamiamo il header
+const header = document.getElementsByClassName('post__header');
+
+
+//Prendendo come riferimento il layout di esempio presente nell’html, stampiamo i post del nostro feed.
+
+posts.forEach(post => {
+    container.innerHTML += `<div class='post'></div>`;
+    header.innerHTML += `<div class="post__header></div>"`
+});
+
+
+//prendiamo profile pic
+let [profilePic] = posts;
+const { image } = profilePic;
+
+console.log('Sono profile pic', profilePic);
+
