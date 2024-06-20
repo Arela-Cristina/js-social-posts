@@ -65,15 +65,27 @@ const header = document.getElementsByClassName('post__header');
 
 //Prendendo come riferimento il layout di esempio presente nell’html, stampiamo i post del nostro feed.
 
-posts.forEach(post => {
-    container.innerHTML += `<div class='post'></div>`;
-    header.innerHTML += `<div class="post__header></div>"`
+posts.forEach(containerElement => {
+    container.innerHTML += `<div class='post'> 
+                                <div class="post__header>
+                                    <div class="post-meta">
+                                        <div class="post-meta__icon">
+                                            <img class="profile-pic" src=${posts.author.image}>
+                                        </div>
+                                        <div class="post-meta__data">
+                                            <div class="post-meta__author">${posts.author}</div>
+                                             <div class="post-meta__time">${posts.created}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
+    
 });
 
 
 //prendiamo profile pic
-let [profilePic] = posts;
-const { image } = profilePic;
+// let [profilePic] = posts;
+// const { image } = profilePic;
 
-console.log('Sono profile pic', profilePic);
+// console.log('Sono profile pic', profilePic);
 
